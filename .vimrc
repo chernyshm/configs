@@ -30,6 +30,8 @@ Plug 'majutsushi/tagbar'
 
 Plug 'shougo/neocomplete.vim'
 
+Plug 'elixir-lang/vim-elixir'
+
 call plug#end()
 
 " Defaults  --------------------------------

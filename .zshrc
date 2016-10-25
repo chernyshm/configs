@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/m-chernysh/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -49,7 +49,7 @@ ZSH_THEME="warm-af-magic"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git django git-extras python)
+plugins=(git django git-extras python virtualenv virtualenvwrapper jira httpie)
 
 # User configuration
 
@@ -117,3 +117,5 @@ alias dbpso='dbshell orders'
 alias dbpsui='dbshell ui'
 alias ggpatch='function _ggpatch(){ CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD`;  git diff > $CURRENT_BRANCH.patch; }; _ggpatch'
 alias utpsa='$VIRTUAL_ENV/bin/trial fraud rates postback wgpp core tools bonus_cards rss video_ads igp brain_tree'
+
+export JIRA_URL="https://jira.wargaming.net"
