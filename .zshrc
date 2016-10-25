@@ -118,4 +118,6 @@ alias dbpsui='dbshell ui'
 alias ggpatch='function _ggpatch(){ CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD`;  git diff > $CURRENT_BRANCH.patch; }; _ggpatch'
 alias utpsa='$VIRTUAL_ENV/bin/trial fraud rates postback wgpp core tools bonus_cards rss video_ads igp brain_tree'
 
+# JIRA 
 export JIRA_URL="https://jira.wargaming.net"
+export JIRA_DEFAULT_ACTION="$(git rev-parse --abbrev-ref HEAD)"
