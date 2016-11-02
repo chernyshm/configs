@@ -28,15 +28,16 @@ Plug 'sherifkandeel/vim-colors'
 
 Plug 'majutsushi/tagbar'
 
-Plug 'shougo/neocomplete.vim'
-
 Plug 'elixir-lang/vim-elixir'
+
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
 " Defaults  --------------------------------
 let mapleader = ","
 set nu
+set cursorline
 set ls=2
 set backspace=2
 colorscheme vimbrains
