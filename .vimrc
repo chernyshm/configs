@@ -17,7 +17,7 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'scrooloose/syntastic'
 
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -32,6 +32,10 @@ Plug 'elixir-lang/vim-elixir'
 
 Plug 'airblade/vim-gitgutter'
 
+Plug 'Valloric/YouCompleteMe'
+Plug 'larrylv/ycm-elixir'
+Plug 'slashmili/alchemist.vim'
+
 call plug#end()
 
 " Defaults  --------------------------------
@@ -40,6 +44,7 @@ set nu
 set cursorline
 set ls=2
 set backspace=2
+set ic
 colorscheme vimbrains
 set hlsearch
 nnoremap <c-c> :set hlsearch!<CR>
@@ -54,12 +59,12 @@ let g:airline_theme = 'distinguished'
 
 " Snippets --------------------------------
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " NERDTree --------------------------------
 nmap <leader>t :NERDTreeFind<CR>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Syntastic  --------------------------------
 nmap <leader>e :Errors<CR>
@@ -106,4 +111,36 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
 \ }
+let g:tagbar_type_elixir = {
+    \ 'ctagstype' : 'elixir',
+    \ 'kinds' : [
+        \ 'f:functions',
+        \ 'functions:functions',
+        \ 'c:callbacks',
+        \ 'd:delegates',
+        \ 'e:exceptions',
+        \ 'i:implementations',
+        \ 'a:macros',
+        \ 'o:operators',
+        \ 'm:modules',
+        \ 'p:protocols',
+        \ 't:tests',
+        \ 'r:records'
+    \ ]
+\ }
+" CtrlP  --------------------------------
+let g:ctrlp_working_path_mode = 'ra'
 
+" YouCompleteMe  --------------------------------
+let g:ycm_min_num_of_chars_for_completion = 3
+let g:ycm_key_invoke_completion = '<S-Enter>'
+let g:ycm_semantic_triggers =  {
+  \   'c' : ['->', '.'],
+  \   'objc' : ['->', '.'],
+  \   'cpp,objcpp' : ['->', '.', '::'],
+  \   'perl' : ['->'],
+  \   'php' : ['->', '::'],
+  \   'cs,java,javascript,d,vim,ruby,python,perl6,scala,vb,elixir,go' : ['.'],
+  \   'lua' : ['.', ':'],
+  \   'erlang' : [':'],
+\ }

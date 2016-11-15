@@ -110,13 +110,15 @@ alias wgpip='mv ~/.pip/wg.conf ~/.pip/pip.conf'
 alias glpip='mv ~/.pip/pip.conf ~/.pip/wg.conf'
 
 alias weather='curl wttr.in/'
-alias dbshell='mysql --user=root --password=password'
+alias dbshell='mysql --user=wgnps --password=wgnps'
 alias dbpsa='dbshell aggregators'
 alias dbpss='dbshell shop'
 alias dbpso='dbshell orders'
 alias dbpsui='dbshell ui'
 alias ggpatch='function _ggpatch(){ CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD`;  git diff > $CURRENT_BRANCH.patch; }; _ggpatch'
 alias utpsa='$VIRTUAL_ENV/bin/trial fraud rates postback wgpp core tools bonus_cards rss video_ads igp brain_tree'
+alias wg='cd ~/projects/wg'
+alias gopath="export GOPATH=$(pwd)"
 
 # JIRA 
 export JIRA_URL="https://jira.wargaming.net"
