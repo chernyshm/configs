@@ -15,6 +15,8 @@ Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' 
 
 Plug 'tpope/vim-fugitive'
 
+Plug 'klen/python-mode'
+
 Plug 'scrooloose/syntastic'
 
 Plug 'ctrlpvim/ctrlp.vim'
@@ -32,9 +34,13 @@ Plug 'elixir-lang/vim-elixir'
 
 Plug 'airblade/vim-gitgutter'
 
+Plug 'lambdatoast/elm.vim'
+
 Plug 'Valloric/YouCompleteMe'
 Plug 'larrylv/ycm-elixir'
 Plug 'slashmili/alchemist.vim'
+
+Plug 'rking/ag.vim'
 
 call plug#end()
 
@@ -53,6 +59,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set backspace=2
+set nofoldenable    " disable folding
 
 " Airline  --------------------------------
 let g:airline_theme = 'distinguished'
@@ -144,3 +151,5 @@ let g:ycm_semantic_triggers =  {
   \   'lua' : ['.', ':'],
   \   'erlang' : [':'],
 \ }
+
+set tags=/Users/chernyshm/.ctags
