@@ -13,7 +13,7 @@ Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' 
 
 Plug 'tpope/vim-fugitive'
 
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 
 Plug 'ctrlpvim/ctrlp.vim'
 
@@ -32,6 +32,8 @@ Plug 'rking/ag.vim'
 
 Plug 'nlknguyen/papercolor-theme'
 
+Plug 'rainglow/vim', { 'as': 'rainglow-themes' }
+
 
 call plug#end()
 
@@ -42,7 +44,10 @@ set cursorline
 set ls=2
 set backspace=2
 set ic
-colorscheme vimbrains
+colorscheme tetra-contrast
+
+
+
 set hlsearch
 nnoremap <c-c> :set hlsearch!<CR>
 set expandtab
@@ -63,11 +68,6 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-" Syntastic  --------------------------------
-nmap <leader>e :Errors<CR>
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_signs = 0
 
 " NERDCommenter  --------------------------------
 let g:NERDSpaceDelims = 1
@@ -81,8 +81,4 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 " CtrlP  --------------------------------
 let g:ctrlp_working_path_mode = 'ra'
 
-" Color shceme
-set t_Co=256   " This is may or may not needed.
 
-set background=light
-colorscheme PaperColor
